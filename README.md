@@ -1,6 +1,6 @@
 # mini-shell
 
-![Picture Of Shell](https://github.com/Advayp/mini-shell/blob/main/Screenshot.PNG?raw=true)
+![Picture Of Shell](https://github.com/Advayp/mini-shell/blob/master/Screenshot.PNG?raw=true)
 
 ## Platform Support
 
