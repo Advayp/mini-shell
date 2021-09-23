@@ -1,6 +1,6 @@
 # mini-shell
 
-A shell made in python
+![Picture Of Shell](https://github.com/Advayp/mini-shell/blob/main/Screenshot.PNG)
 
 ## Platform Support
 
