@@ -33,3 +33,11 @@ def read(*args):
 
 def printEnv(*args):
     os.system("set")
+
+
+def ping(*args):
+    print("Pong!")
+
+
+def echo(*args):
+    print(args[0])

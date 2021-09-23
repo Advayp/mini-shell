@@ -21,6 +21,9 @@ def parseCommands(line: str, debug=False, shellName='powershell'):
 
         return
 
+    if line.strip() == '':
+        return
+
     if debug:
         print(keywords)
 
@@ -29,7 +32,7 @@ def parseCommands(line: str, debug=False, shellName='powershell'):
         try:
             COMMAND_LIST_NO_ARGS[command].use()
         except KeyError:
-            print(colored(f"AdvayShell: Command {command} not found", "red"))
+            print(colored(f"mash: Command \"{command}\" not found", "red"))
         except:
             print(colored("Error Occured", "red"))
 
@@ -39,4 +42,4 @@ def parseCommands(line: str, debug=False, shellName='powershell'):
         try:
             COMMAND_LIST_ONE_ARG[command].use(arg)
         except KeyError:
-            print(colored(f"AdvayShell: Command {command} not found", "red"))
+            print(colored(f"mash: Command \"{command}\" not found", "red"))
