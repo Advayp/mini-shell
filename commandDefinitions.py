@@ -2,6 +2,8 @@ import os
 
 WINDOWS_SEPERATOR = "\\"
 
+_ENV = {}
+
 
 def printDir(*args):
     os.system('dir')
@@ -31,13 +33,20 @@ def read(*args):
     os.system(f'type {args[0]}')
 
 
-def printEnv(*args):
-    os.system("set")
-
-
 def ping(*args):
     print("Pong!")
 
 
 def echo(*args):
     print(args[0])
+
+
+def addEnv(*args):
+    _ENV[args[0]] = args[1]
+
+
+def readEnv(*args):
+    if args[0] in _ENV.keys():
+        print(_ENV[args[0]])
+        return
+    print()

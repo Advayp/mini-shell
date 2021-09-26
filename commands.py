@@ -1,4 +1,4 @@
-from commandDefinitions import changeDir, changeDirOneBack, create, echo, ping, printDir, printEnv, printExternalDir, open, read
+from commandDefinitions import *
 
 
 class Command:
@@ -16,7 +16,6 @@ COMMAND_LIST_NO_ARGS: dict[str, Command] = {
     "printdir": Command("printdir", printDir, "Usage: printdir", description='List Contents of the Current Directory'),
     "pd": Command("printdir", printDir, "Usage: pd", description='List Contents of the Current Directory'),
     "cd..": Command("Change Directory", changeDirOneBack, "Usage: cd..", description='Go Back One Directory'),
-    "printenv": Command("Print Environment Variables", printEnv, "Usage: printenv", description='Prints Environment Variables'),
     "ping": Command("Ping", ping, "Usage: ping", description="A command made for fun!")
 }
 
@@ -27,5 +26,10 @@ COMMAND_LIST_ONE_ARG: dict[str, Command] = {
     "open": Command("Open", open, "Usage: open $FILE_NAME", description="Opens A File"),
     "create": Command("Create", create, "Usage: create $FILE_NAME", description="Creates A File"),
     "read": Command("Read", read, "Usage: read $FILE_NAME", description="Reads A File"),
-    "echo": Command("Echo", echo, "Usage: echo $TEXT", description="Prints Text To The Console")
+    "echo": Command("Echo", echo, "Usage: echo $TEXT", description="Prints Text To The Console"),
+    "printenv": Command("PrintEnv", readEnv, "Usage: printenv $ENV_NAME", description='Prints an Environment Variable')
+}
+
+COMMAND_LIST_TWO_ARGS: dict[str, Command] = {
+    "setenv": Command("Set Env", addEnv, "Usage: setenv $ENV_NAME $VALUE", description="Sets and Environment Variable")
 }

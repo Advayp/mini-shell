@@ -25,10 +25,23 @@ def shortenCWD(cwd: str):
     return cwd[idx:]
 
 
+def readRC():
+    try:
+        with open('config.mash', mode='r') as file:
+            for line in file:
+                if line[0] == '#':
+                    continue
+                parseCommands(line)
+    except:
+        return
+
+
 def main():
     DEBUG: bool = False
     print(colored("Welcome To Miniature Shell (mash)!", "green"))
     print(colored("Type 'help' or '?' for a list of commands", "green"))
+
+    readRC()
 
     while True:
 
